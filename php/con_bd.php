@@ -7,7 +7,7 @@ session_start();
 $servername = "localhost";
 $database = "bd_tienda";
 $username = "root";
-$password = "";
+$password = "root";
 // Create connection
 $mysqli =  new mysqli($servername, $username, $password, $database);
 // Check connection
