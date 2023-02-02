@@ -4,10 +4,10 @@
 
 session_start();
 
-$servername = "mx58.hostgator.mx";
-$database = "mnegocio_bd_tienda";
-$username = "mnegocio";
-$password = "53Hjv]+TK4yF8f";
+$servername = "localhost";
+$database = "bd_tienda";
+$username = "root";
+$password = "";
 // Create connection
 $mysqli =  new mysqli($servername, $username, $password, $database);
 // Check connection
