@@ -1,4 +1,5 @@
-<?php
+<!--
+    <?php
 session_start();
 if (isset($_SESSION['usuario'])) {
     if ($_SESSION['usuario']['tipo_usuario'] =='Administrador') {
@@ -8,7 +9,7 @@ if (isset($_SESSION['usuario'])) {
     }
 }
 ?>
-
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
@@ -31,11 +32,11 @@ if (isset($_SESSION['usuario'])) {
                             <div class="card-body">
                                 <form id="formlg">
                                     <div class="form-group">
-                                      <input type="text" class="form-control" id="Usuario"  pattern="[A-Za-z0-9_-]{1,15}" placeholder="Usuario" name="Usuario" required>
+                                      <input type="text" class="form-control" id="Usuario"  pattern="[A-Za-z0-9_-ñÑ]{1,15}" placeholder="Usuario" name="Usuario" required>
                                       </div>
                                     <div class="form-group">
                                         <div class="input-group">
-                                             <input type="password" class="form-control" id="Password" name="Password" pattern="[A-Za-z0-9_-]{1,15}" placeholder="Contraseña" required>
+                                             <input type="password" class="form-control" id="Password" name="Password" pattern="[A-Za-z0-9_-ñÑ]{1,15}" placeholder="Contraseña" required>
                                     
                                     <div class="input-group-append">
                                         <button id="show_password" class="btn btn-warning" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
@@ -73,23 +74,26 @@ if (isset($_SESSION['usuario'])) {
    let transaction = new FormData(form);
    let user = transaction.get("Usuario");
    let pass = transaction.get("Password");
-   //alert(user+" "+pass);
+  // alert(user+" / "+pass);
    
    $.ajax({
         url: 'php/sesion.php',
        type:'POST',//get es para regresar valores del servidor POST: cuando mandamos valores al servidor
        data: {user,pass},//mandamos el objeto con los datos a tasksearch
        success: function(response){
-//        alert(response+" " +response[1]+response[2]+response[3]+response[4]+response[5]+response[6]+response[7]+response[8]+response[15]);
-    
+        alert(response + " " + "la respuesta " );//+response[1]+response[2]+response[3]+response[4]+response[5]+response[6]+response[7]+response[8]+response[15]);
+    if(response[2] == "U"){
         var tipo=response[2]+response[3]+response[4]+response[5]+response[6]+response[7]+response[8];
-   // alert(tipo);
+    }else{
+        var tipo=response[3]+response[4]+response[5]+response[6]+response[7]+response[8]+response[9];
+    }
+    alert(tipo + " tipo de usuario" );
          if (tipo === 'Adminis') {
+            alert("Entre en admin");
                 location.href ="Menu.php";
-                //alert("Entre en admin");
            }else if(tipo == 'Usuario'){
+            alert("Entre en usuario");
             location.href ="Menu.php";
-            //alert("Entre en usuario");
            }else{
              alert("ALGO ANDA MAL!! intenta nuevamente");
            }

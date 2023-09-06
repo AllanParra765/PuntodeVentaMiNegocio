@@ -9,8 +9,9 @@ if (isset($_POST['user'])) {
     if (isset($_POST['pass'])) {
        
  
-        $query = "SELECT tipo_usuario,id_usuario FROM tb_loginUsuario WHERE usuario='$usuario' AND contrasena = sha1('$password')";//"SELECT tipo_usuario FROM 'tb_loginusuario' WHERE 'usuario' = 'usuario' and 'id_usuario'= 1";
+        $query = "SELECT tipo_usuario,id_usuario FROM tb_loginusuario WHERE usuario='$usuario' AND contrasena = sha1('$password')";
         $result = mysqli_query($mysqli, $query);
+       // echo($result+" valor consulta tb_loginusuario");
         if(!$result){
             die( 'Query Error'. mysqli_error($mysqli));
         }elseif($result->num_rows == 1){

@@ -49,17 +49,17 @@ if (isset($_SESSION['usuario'])) {
                         <form  name="formAgregar" id="formAgregar"  method="post" enctype="multipart/form-data" action="php/agregar_producto.php">
                             <div class="form-group">
                             <label for="exampleInputEmail1">Nombre Producto:</label>
-                              <input type="text" class="form-control" name="Nombreproducto" id="Nombreproducto"  placeholder=""required>
+                              <input type="text" class="form-control" name="NombreProducto" id="NombreProducto"  placeholder=""required>
                             </div>
                             <div class="form-group">
                             <label for="exampleInputEmail1">Cantidad de piezas:</label>
                                 <input type="number" class="form-control" name="cantidadProducto" id="cantidadProducto" placeholder="" required>
                               </div>
-                              <!--
+                              
                               <div class="form-group">
                                 <input type="text" class="form-control" name="precioProvedor" id="precioProvedor"placeholder="Precio Provedor" require>
                               </div>
-                              -->
+                              
                               <div class="form-group">
                              
                               <label for="exampleInputEmail1">Precio Producto</label>
@@ -80,12 +80,12 @@ if (isset($_SESSION['usuario'])) {
                             <div class="form-group">
                             <label for="exampleInputEmail1">Código</label>
                               <input type="text" class="form-control" name="codigo" id="codigo" placeholder="" required/>
-                              <!--
+                            
                                     <div class="mb-3">
                                       <label for="formFile" class="form-label">Cargar imagen del Producto</label>
                                       <input class="form-control" type="file" id="imagen" name="imagen">
                                     </div>
-                                      -->                             
+                                                                  
                               <hr>
                              
                               <div id="scanner-container"></div>
@@ -105,16 +105,16 @@ if (isset($_SESSION['usuario'])) {
     
 <script>
 function vamos(comp) {
-    //alert("entre");
+  alert("entre");
   let  ListaCompras = [];
   let  nuevas= $('#compramos').val();
   let _cod = comp.id;
   let _antesntes = comp.name;
   let  _precio= $('#cantidad').val();
   //let otro = comp.name;
-  //console.log(id);
+  console.log(id);
 
- // alert(_antesntes+" vamos "+_cod+" "+nuevas+" "+_precio);
+  alert(_antesntes+" vamos "+_cod+" "+nuevas+" "+_precio);
 
 var Compra = {
     piezas: nuevas,

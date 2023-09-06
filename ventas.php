@@ -30,7 +30,8 @@ if (isset($_SESSION['usuario'])) {
               <input class="form-control mr-sm-2" type="search" name="search" id="search" placeholder="Código Producto">
                   <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Escanear C車digo</button>-->
             </form>
-        </nav>
+            <a class="navbar-brand" href="php/salir.php">Cerrar sesión</a>
+        </nav>  
       </div>
            
                 <div class="col-md-8">
